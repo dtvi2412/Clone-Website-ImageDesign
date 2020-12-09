@@ -1,0 +1,99 @@
+.follow{
+    background-image: url("https://imagedesigncustom.co.uk/assets/images/insta-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding:60px 0 80px 0;
+
+    font-family: raleway;
+}
+.follow__name {
+    margin-bottom: 30px;
+}
+.follow__name > p {
+    color:#fff;
+    font-size:1rem;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin:10px 0;
+}
+.follow__name > h1{
+    color:#fff;
+    font-size:3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+
+    margin:15px 0;
+}
+.follow__listImage{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin:0 auto;
+    
+}
+.follow__listImage__image{
+    margin-right:10px;
+
+    width: 250px;
+    position: relative;
+    cursor: pointer;
+   
+}
+.follow__listImage__image:hover::after{
+    opacity: 1;
+}
+.follow__listImage__image::after{
+    content: '';
+    background-color: rgba(0,0,0,0.6);
+
+    width:100%;
+    height:100%;
+
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: all .5s;
+}
+.follow__listImage__image > img{
+    width:100%;
+    height:100%;
+
+    object-fit: cover;
+   
+}
+@media only screen and (max-width:868px){
+    .follow__name > h1{
+        font-size:2.5rem;
+    }
+    .follow__listImage__image{
+        width: 200px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width:490px){
+    .follow__name > h1{
+        font-size:2rem;
+    }
+    .follow__listImage__image{
+        width: 250px;
+    }
+    .follow__listImage__image{
+        margin-right: 0px;
+        margin-bottom: 40px;
+    }
+}

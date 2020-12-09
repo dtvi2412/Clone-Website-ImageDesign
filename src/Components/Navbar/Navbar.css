@@ -1,0 +1,275 @@
+@font-face{
+    font-family: raleway;
+    src: url(../../Assets/Fonts/Raleway-ExtraBold.ttf);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0px 20px;
+    background-color: #000;
+
+
+
+}
+/* Logo */
+.header__logo img{
+    width: 220px;
+    height: auto;
+    object-fit: cover;
+}
+/* Nav */
+.header__nav > ul.root{
+    display: flex;
+   
+}
+.header__nav ul.root > li{
+    list-style: none;
+    position: relative;
+    padding:20px 0;
+}
+.header__nav ul.root > li > a{
+    text-decoration: none;
+    color:#fff;
+    padding:20px;
+    cursor: pointer;
+    font-family: raleway;
+    font-weight: bold;
+    display: block;
+}
+.header__nav__submenu{
+    display: none;
+}
+.header__nav ul.submenu { 
+    background-color: #1d1d1d;
+    color:#fff;
+
+    opacity: 0;
+    visibility: hidden;
+
+
+    transition: all .5s ease;
+    width: 100vw;
+    padding:15px 0;
+
+    position: absolute;
+    left:-534%;
+ 
+    /* left:calc(-220px - 20px - 30px); */
+  
+    top:calc(100% + 0px);
+
+    z-index: 99;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeSubmenu .3s linear 1;
+}
+.header__nav__icon {
+    display: none;
+}
+@keyframes fadeSubmenu{
+    from{
+        opacity: 0.4;
+    }
+    to{
+        opacity: 1;
+    }
+}
+ul.root > li:hover  ul.submenu{
+    opacity: 1;
+    visibility: visible;
+}
+ul.root > li:hover .header__nav__submenu{
+    display: block;
+}
+.header__nav ul.submenu li{
+    list-style: none;
+}
+.header__nav ul.submenu li a{
+    color:#fff;
+     text-decoration: none;
+     display: block;
+     /* border-top:1px solid #ccc; */
+     line-height: 40px;
+     text-indent: 10px;
+     font-family: raleway;
+    margin:0 10px;    
+}
+/* Header right */
+.header__right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+.header__right__found > .MuiSvgIcon-root{
+    color:#fff;
+   
+}
+.header__right__nav > ul.rightnav{
+    display: flex;
+    align-items: center;
+}
+.header__right__nav > ul.rightnav > li{
+    list-style: none;
+}
+.header__right__nav ul.rightnav > li > a{
+    color:#fff;
+    text-decoration: none;
+    padding:20px;
+    cursor: pointer;
+    font-family: raleway;
+    font-weight: bold;
+}
+.header__right__social > .MuiSvgIcon-root{
+     color:#fff;
+     margin:0 10px;
+     font-size:1.3rem;
+     cursor: pointer;
+}
+/* Hambuger */
+.header__reponsiveHambuger{
+    cursor: pointer;
+    width: 50px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+
+   
+    display: none;
+}
+.header-hambuger{
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+   
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.header-hambuger::before{
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top:-10px;
+    left:0;
+}
+.header-hambuger::after{
+    content: '';
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -10px;
+    left:0; 
+}
+@media only screen and (max-width:1275px){
+    .header__nav{
+        /* display: none; */
+    }
+    .header{
+        position: relative;
+    }
+    .header__right{
+        display: none;
+    }
+    .header__reponsiveHambuger{
+       display: block;
+      
+    }
+    .root{
+        position: absolute;
+        /* height image 77px */
+        top:calc(0px + 80px);
+        left:0px;
+        z-index: 9999;
+        width: 280px;
+
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-color: #111;
+
+        overflow: hidden;
+        transition: all .2s;
+        animation: rightsideNav 0.2s 1 linear alternate;
+    }
+    .root li {
+        border-bottom: 1px solid #fff;
+       
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header__nav .root  li:nth-child(1){
+        padding-top:80px;
+    }
+    .header__nav__icon{
+        display: block;
+    }
+    .header__nav__icon > .MuiSvgIcon-root{
+        color: #fff;
+        font-size:1.2rem;
+        margin-right:40px;
+       
+    }
+    .header__nav ul.submenu { 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        /* width: auto; */
+        padding: 0px 0;
+        height: 100vh;
+        width: 280px;
+
+        position: absolute;
+        left:0;
+        top:0;
+        background-color: rgb(56, 56, 56);
+      
+        animation: rightSideSubMenu 0.2s linear 1 alternate;
+    }
+    .header__nav ul.submenu li{ 
+        border-bottom: 1px solid #fff;
+        width: 100%;
+
+        padding:20px 0;
+    }
+  
+}
+@keyframes rightsideNav {
+    from{
+        position: absolute;
+        left:-200px;
+    }
+    to{
+        position: absolute;
+        left:0px;
+    }
+}
+@keyframes rightCloseSide {
+    from{
+        position: absolute;
+        left:0;
+    }   
+    to{
+        position: absolute;
+        left:-300px;
+    }
+}
+@keyframes rightSideSubMenu{
+    from{
+        position: absolute;
+        left:200px;
+    }to{
+        position: absolute;
+        left:0;
+    }
+}
